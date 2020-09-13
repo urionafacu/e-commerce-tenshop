@@ -1,0 +1,10 @@
+.puntaje {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+}
+
+#numeroPuntaje {
+  margin-right: 25%;
+}
+

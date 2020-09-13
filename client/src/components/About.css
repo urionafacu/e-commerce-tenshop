@@ -1,0 +1,14 @@
+.bb {
+  display: flex;
+  justify-content: center;
+}
+
+.aa {
+  font-size: 300px;
+  margin-top: 150px;
+  height: 350px;
+  width: 300px;
+  background-color: gray;
+  color: white;
+  border-radius: 10px;
+}

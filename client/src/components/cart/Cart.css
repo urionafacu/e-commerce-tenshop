@@ -1,0 +1,38 @@
+
+.asdd{
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+.asda{
+    margin-left: 15px;
+    font-size: 25px;
+}
+
+.asdp{
+    font-size: 25px;
+}
+
+.aaaa{
+    font-size: 15px;
+}
+
+/* .botonmasmenos {
+  cursor: pointer;
+  color: FE980F;
+  border-color: FE980F;
+  background-color: transparent;
+} */
+
+.alertacartguille{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    margin: 50px 10px 200px 10px;
+    background-color: orange;
+    color: white;
+    border-radius: 7px;
+    font-weight: bold;
+}
+

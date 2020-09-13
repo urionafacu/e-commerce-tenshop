@@ -1,0 +1,80 @@
+.LOGIN {
+    display: flex;    
+    margin-top: 230px;
+    flex-direction: column;
+    background-color: rgb(220, 53, 69);
+    width: 300px;    
+    height: 330px;
+    border-radius: 10px;
+    margin-left: 500px;
+}
+
+
+.SUBMIT {
+    height: 20px;
+    width: 60px;
+    margin-top: 20px;
+    border-radius: 7px;    
+}
+
+
+.labelUsername {
+  margin-right: 10px;
+}
+
+.labelPassword {
+  margin-right: 14px;
+}
+
+.submit {
+  color: white;
+  background-color: #FE980F;
+  border-radius: 5px;
+  border-color: black;
+}
+.input {
+  border-radius: 15px
+}
+.signbutton {
+  font-size:20px;
+  font-style: normal;
+  border-radius: 10px;
+}
+.text {
+  display: flex;
+    font-size: 13px;
+}
+
+form { margin: 0px 10px; }
+
+h2 {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.container { max-width: 360px; }
+
+.divider {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.divider hr {
+  margin: 7px 0px;
+  width: 35%;
+}
+
+.left { float: left; }
+
+.right { float: right; }
+
+.exampleEmail {
+  display: flex;
+  justify-content: center;
+}
+
+#help {
+  font-size: 12px;
+  color: red;
+}

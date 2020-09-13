@@ -1,0 +1,27 @@
+
+a:visited{
+    color: blanchedalmond;
+}
+
+
+
+.effect-hover{
+    position: absolute;
+    text-align: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-size: 30px;
+    transition-duration: 2s;
+    margin: 0px;
+  }
+
+  .navbar-nav li ul.sub-menu li a{
+    font-size: 17px;
+    
+ }
+
+  .navbar-nav li ul.sub-menu li a:hover {
+     background-color: transparent;
+     
+  }

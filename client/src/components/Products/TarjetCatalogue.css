@@ -1,0 +1,76 @@
+.imagen {
+  width: 20%
+}
+
+.laImagen {
+  height: 400%;
+  width: 400%;
+}
+
+.asd{
+  height: auto;
+  width: auto;
+
+}
+
+.ddd{
+  height: 200px;
+}
+
+.addhome{
+width: 240px ;
+background-color:rgb(248, 248, 248);
+/* background-color: orange; */
+color:orange;
+font-weight: bold;
+
+}
+
+.notCart {
+  width: 240px ;
+  background-color:rgb(248, 248, 248);
+  /* background-color: orange; */
+  color:red;
+  font-weight: bold;
+
+}
+
+button:hover { background-color: orange }
+
+.swal2-content{
+  font-size: 2em;
+}
+
+.swal2-popup{
+  border-radius: 35px;
+  width: 500px;
+height: 250px;
+}
+
+.swal2-styled.swal2-cancel{
+  width: 130px;
+  border-radius: 8px;
+}
+
+.swal2-styled.swal2-confirm{
+  width: 130px;
+  border-radius: 8px;
+}
+.swal2-confirm.swal2-styled{
+  background: orange
+}
+
+.swal2-icon.swal2-question{
+  color: orange;
+  border-color: orange;
+}
+
+.react-rater-star.is-active {
+  color:orange;
+
+}
+
+#tarjetita {
+  border-radius:10px;
+  box-shadow:  3px 7px 5px 4px rgb(205, 209, 206);
+}

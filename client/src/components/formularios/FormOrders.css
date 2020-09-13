@@ -1,0 +1,62 @@
+.palabras{
+    color: black;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.alertaguille{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    margin: 0px 10px;
+    background-color: orange;
+    color: white;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+
+.alertaguille2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    background-color:rgb(206, 204, 204);
+    color: black;
+    font-weight: bold;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.alertorderguille{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        margin: 0px 10px;
+        background-color: orange;
+        color: white;
+        border-radius: 7px;
+        font-weight: bold;
+    
+}
+
+.alertorderguille3{
+    text-align: center;
+    align-items: center;
+    height: 40px;
+    margin: 0px 10px;
+    background-color: orange;
+    color: white;
+    border-radius: 7px;
+    font-weight: bold;
+
+}
+
+button:hover{
+    background-color: rgb(216, 214, 214);
+    color:white;
+}
