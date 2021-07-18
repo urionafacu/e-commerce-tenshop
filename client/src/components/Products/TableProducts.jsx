@@ -1,9 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react';
-import Product from './Product';
+import React, { useEffect } from 'react';
 import { connect } from "react-redux";
-import { updateProduct, deleteCatxProd, deleteProduct, getCategoriesxProducts, getAllCategories, getAllProducts } from "../../actions"
+import { updateProduct, deleteCatxProd, getCategoriesxProducts, getAllCategories, getAllProducts } from "../../actions"
 
-function TableProducts({products, update, elId, deleteProductxId, categxproducts, deleteCatxprod, getAllProducts, categoriesfromTableProducts}) {
+function TableProducts({products, update, elId, deleteProductxId, categxproducts, deleteCatxprod, getAllProducts }) {
     useEffect(() => {
       getAllCategories()
       getCategoriesxProducts()

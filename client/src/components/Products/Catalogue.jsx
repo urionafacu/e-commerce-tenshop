@@ -1,76 +1,69 @@
 import React from 'react';
 import TarjetCatalogue from './TarjetCatalogue.jsx';
 import { connect } from "react-redux";
-import { getAllProducts, getAllCategories, onlineUserError, loginUserCookie , addCartInvited, getAllCart, vaciarls, getAllReviews} from "../../actions";
-import Swal from 'sweetalert2';
+import { getAllProducts, onlineUserError, addCartInvited, getAllCart, vaciarls, getAllReviews } from "../../actions";
 var ls = require('local-storage');
 
-function Catalogue({ products, getAllProducts, onlineUser, onlineUserError, loginUserCookie , addCartInvited, setid, getAllCart, getcart, vaciarls, getAllReviews,allreviews}) {      
+function Catalogue({ products, getAllProducts, onlineUser, addCartInvited, getAllCart, getcart, vaciarls, getAllReviews, allreviews }) {
 
   React.useEffect(() => {
     getAllProducts()
     getAllReviews()
   }, [])
-  function promedy(id){
-      var acum = 0;
-      var cont = 0;
+  function promedy(id) {
+    var acum = 0;
+    var cont = 0;
     allreviews.forEach(r => {
       if (r.productId === id) {
         cont += 1
         acum += r.rating
       }
     })
-      if (cont === 0){
-        return 0
-      } else {
+    if (cont === 0) {
+      return 0
+    } else {
       var promedy = acum / cont
       promedy.toFixed(2)
       //console.log("PRoemdios", promedy)
       return promedy
-      }
-    }
-
-
-  var flag = false;  
-        if (typeof onlineUser === "object" && ls.get('idProducts').length !== 0 ) {
-                  let arr = [];
-                  ls.get('idProducts').forEach(function(ele){
-                      return arr.push(parseInt(ele))
-                    });
-                    addCartInvited(arr, onlineUser.id);
-                    getAllCart(onlineUser.id);
-                    //console.log("SIGN IN PROOOOOOO", arr)          
-                    if(getcart.length >= ls.get('idProducts').length){
-                      vaciarls()
-                    }
-                  }  
-                  /*       if(setid.length !== 0){
-            let arr = [];
-            setid.forEach(function(ele){
-                return arr.push(parseInt(ele))
-              }); */
-    if(products){
-      
-      return (
-        <div className='container' style={{marginTop: "40px"}}>
-          {products.map(c => 
-            <TarjetCatalogue
-              id={c.id}
-              name={c.name}
-              description={c.description}
-              price={c.price}
-              stock={c.stock}
-              image={c.image}    
-              rating= {promedy(c.id)}
-            /> )}
-        </div>
-      );
-    } else {
-      return(
-        <div>No products found.</div>
-      )
     }
   }
+
+
+  if (typeof onlineUser === "object" && ls.get('idProducts').length !== 0) {
+    let arr = [];
+    ls.get('idProducts').forEach(function (ele) {
+      return arr.push(parseInt(ele))
+    });
+    addCartInvited(arr, onlineUser.id);
+    getAllCart(onlineUser.id);
+    if (getcart.length >= ls.get('idProducts').length) {
+      vaciarls()
+    }
+  }
+
+  if (products) {
+
+    return (
+      <div className='container' style={{ marginTop: "40px" }}>
+        {products.map(c =>
+          <TarjetCatalogue
+            id={c.id}
+            name={c.name}
+            description={c.description}
+            price={c.price}
+            stock={c.stock}
+            image={c.image}
+            rating={promedy(c.id)}
+          />)}
+      </div>
+    );
+  } else {
+    return (
+      <div>No products found.</div>
+    )
+  }
+}
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -80,8 +73,8 @@ const mapDispatchToProps = dispatch => {
     getAllCart: (idUser) => dispatch(getAllCart(idUser)),
     vaciarls: () => dispatch(vaciarls()),
     getAllReviews: () => dispatch(getAllReviews())
-    
-    
+
+
   }
 }
 

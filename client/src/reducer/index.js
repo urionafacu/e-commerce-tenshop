@@ -1,60 +1,59 @@
 import axios from "axios";
 import {
-    GET_ALL_PRODUCT,
-    GET_SEARCH_PRODUCTS,
-    UPDATE_PRODUCT,
-    DELETE_PRODUCT,
-    DELETECATXPROD,
-    GET_ALL_CATEGORIES,
-    GET_CATEGORIES_X_PRODUCTS,
-    GET_ONE_CATEGORY,
-    ADD_CATEGORY,
-    MODIFY_CATEGORY,
-    DELETE_CATEGORY,
-    ADD_USER,
-    LOGIN_USER,
-    ADD_CART,
-    GET_ALL_CART,
-    USER_LOGOUT,
-    DELETE_USER,
-    ONLINE_USER_ERROR,
-    GET_USERS,
-    UPDATE_USER,
-    UPDATE_CAR,
-    COMPLETE_CAR,
-    CANCELL_CART,
-    GET_ORDERS,
-    UPDATE_PRICE_ORDER,
-    GET_REVIEWS,
-    ADD_REVIEW,
-    LOGIN_USER_COOKIE,
-    GET_ORDERSXPRODUCT,
-    UPDATE_ONLINE_USER,
-    SET_ID,
-    VACIAR_LS,
-    ADD_CART_INVITED,
-    GET_PRODUCTSXORDER,
-    FINISH_ORDER,
-    GET_ALL_REVIEWS,
-    DELETE_PRODUCT_CART,
-    CANCELL_ORDER,
-    GET_SUMARY_CART,
-    ACTIVE_ACCOUNT,
-    SEND_EMAIL_ORDER
+  GET_ALL_PRODUCT,
+  GET_SEARCH_PRODUCTS,
+  UPDATE_PRODUCT,
+  DELETE_PRODUCT,
+  DELETECATXPROD,
+  GET_ALL_CATEGORIES,
+  GET_CATEGORIES_X_PRODUCTS,
+  GET_ONE_CATEGORY,
+  ADD_CATEGORY,
+  MODIFY_CATEGORY,
+  DELETE_CATEGORY,
+  ADD_USER,
+  LOGIN_USER,
+  ADD_CART,
+  GET_ALL_CART,
+  USER_LOGOUT,
+  DELETE_USER,
+  ONLINE_USER_ERROR,
+  GET_USERS,
+  UPDATE_USER,
+  UPDATE_CAR,
+  COMPLETE_CAR,
+  CANCELL_CART,
+  GET_ORDERS,
+  UPDATE_PRICE_ORDER,
+  GET_REVIEWS,
+  ADD_REVIEW,
+  LOGIN_USER_COOKIE,
+  GET_ORDERSXPRODUCT,
+  UPDATE_ONLINE_USER,
+  SET_ID,
+  VACIAR_LS,
+  ADD_CART_INVITED,
+  GET_PRODUCTSXORDER,
+  FINISH_ORDER,
+  GET_ALL_REVIEWS,
+  DELETE_PRODUCT_CART,
+  CANCELL_ORDER,
+  GET_SUMARY_CART,
+  ACTIVE_ACCOUNT,
+  SEND_EMAIL_ORDER
 
 
-   } from '../actions/index';
-var ls = require('local-storage');
+} from '../actions/index';
 
 const initialState = {
   all_products: [],
   search_result: [],
   categores_x_products: [],
   categories: [],
-  onecategory:[],
+  onecategory: [],
   onlineUser: 0,
-  cart:[],
-  getcart:[],
+  cart: [],
+  getcart: [],
   all_users: [],
   getorders: [],
   reviews: [],
@@ -78,7 +77,6 @@ const reducer = (state = initialState, action) => {
         ...state,
         all_products: action.payload
       };
-      /* adsadasdadasdasd */
     case UPDATE_PRODUCT:
       let id = action.payload.id;
       let categories = action.payload.category
@@ -87,7 +85,6 @@ const reducer = (state = initialState, action) => {
         product_id: id,
         category: cat
       }))
-      /////
       let filterBody = action.payload;
       delete filterBody.category
       let newAllProducts = [];
@@ -139,15 +136,15 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         categories: [...state.categories, action.payload]
-            }
+      }
     case MODIFY_CATEGORY:
       let name = action.payload.name;
       let newCategories = state.categories.filter(elem => name !== elem.name)
       let filterCat = action.payload.body;
       newCategories.push(filterCat)
       return {
-         ...state,
-         categories: newCategories
+        ...state,
+        categories: newCategories
       }
     case DELETE_CATEGORY:
       return {
@@ -172,7 +169,7 @@ const reducer = (state = initialState, action) => {
     case ADD_CART_INVITED:
       return { ///StateAdd_Prods
         ...state,
-       // cart: agregaids(action.payload)
+        // cart: agregaids(action.payload)
       }
     case GET_ALL_CART:
       return { ///StateAdd_Prods
@@ -224,32 +221,32 @@ const reducer = (state = initialState, action) => {
       }
 
     case GET_ORDERS:
-       return {
-       ...state,
-       getorders: action.payload
-       }
+      return {
+        ...state,
+        getorders: action.payload
+      }
     case ADD_REVIEW:
-        return {
-          ...state,
-          newrev: action.payload
+      return {
+        ...state,
+        newrev: action.payload
       }
     case DELETE_USER:
-      return {////////////////////////////////////////
-         ...state,
-          all_users: [...state.all_users.filter(user => user.id !== action.payload)]
+      return {
+        ...state,
+        all_users: [...state.all_users.filter(user => user.id !== action.payload)]
 
       }
     case GET_REVIEWS:
-       return {
-         ...state,
-         reviews: action.payload
-       }
+      return {
+        ...state,
+        reviews: action.payload
+      }
     case CANCELL_CART:
-       return {
-         ...state,
-         getcart: [],
-         cart: []
-       }
+      return {
+        ...state,
+        getcart: [],
+        cart: []
+      }
     case GET_REVIEWS:
       return {
         ...state,
@@ -305,13 +302,13 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         getorders: [],
-        productsxorder:[]
+        productsxorder: []
       }
     case GET_ALL_REVIEWS:
-    return {
-      ...state,
-      allreviews: action.payload
-    }
+      return {
+        ...state,
+        allreviews: action.payload
+      }
     case DELETE_PRODUCT_CART:
       return {
         ...state,
@@ -331,16 +328,15 @@ const reducer = (state = initialState, action) => {
     case SEND_EMAIL_ORDER:
       return {
         ...state,
-    }
-      
+      }
 
     default:
-      return state;
+      throw new Error('Action type invalid');
   }
 
 
 
-  function setidproduct (id) {
+  function setidproduct(id) {
     let asd = [...state.setid, id];
     //ls.set('idProducts', asd);
     return asd
@@ -357,19 +353,19 @@ function reducerAddUser(data) {
     const { id, username, firstname, surname, type, address } = data[1];
     var password = data[2]
     if (data[1].googleId) {
-      axios.post("http://localhost:3001/loginGoogle", {username, password}, { withCredentials: true })
+      axios.post("http://localhost:3001/loginGoogle", { username, password }, { withCredentials: true })
     } else {
-      axios.post("http://localhost:3001/login", {username, password}, { withCredentials: true })
+      axios.post("http://localhost:3001/login", { username, password }, { withCredentials: true })
     }
     return { id, username, firstname, surname, type, address };
 
-  } else if(data[1]){
+  } else if (data[1]) {
     const { id, username, firstname, surname, type, address } = data[1][0]
     var password = data[2]
     if (data[1][0].googleId) {
-      axios.post("http://localhost:3001/loginGoogle", {username, password}, { withCredentials: true })
+      axios.post("http://localhost:3001/loginGoogle", { username, password }, { withCredentials: true })
     } else {
-      axios.post("http://localhost:3001/login", {username, password}, { withCredentials: true })
+      axios.post("http://localhost:3001/login", { username, password }, { withCredentials: true })
     }
     return { id, username, firstname, surname, type, address }
 
@@ -378,15 +374,15 @@ function reducerAddUser(data) {
   }
 }
 
-function reducerlogin(data){
-  if(data){
+function reducerlogin(data) {
+  if (data) {
     return data
-  }else {
+  } else {
     return 2
   }
 }
 
-function reducerUpdateUser (ar,id,body){
+function reducerUpdateUser(ar, id, body) {
 
   ar.forEach((item, i) => {
     if (item.id == id) {
@@ -397,16 +393,10 @@ function reducerUpdateUser (ar,id,body){
 
 }
 
-function loginUserCookie (data) {
+function loginUserCookie(data) {
   if (data) {
     return data
   } else {
     return 0
   }
 }
-
-/* function agregaids (ids) {
-  ids.forEach(element => {
-    return [...state.cart, element]
-  });
-} */
